@@ -7,8 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1fpcvAOZnFdAfRYZHazxniue9OgKm1sPX
 """
 
-pip install streamlit
-
 # Import necessary libraries
 import streamlit as st
 # Your Machine Learning model code goes here
