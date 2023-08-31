@@ -6,7 +6,7 @@ import joblib
 st.title('ML Prediction App')
 
 # Upload a .xlsx file
-uploaded_file = st.file_uploader('Upload an .xlsx file', type=['xlsx'])
+uploaded_file = st.file_uploader('Upload an CSV file', type=['csv'])
 
 # Load the trained model
 model = joblib.load('trained_model.pkl')  # Replace with the actual file name
