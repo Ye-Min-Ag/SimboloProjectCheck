@@ -17,14 +17,14 @@ if uploaded_file is not None:
     data = pd.read_csv(uploaded_file)
 
     # Display the uploaded data
-    st.write('Uploaded Data:')
-    st.write(data)
+    #st.write('Uploaded Data:')
+    #st.write(data)
 
     # Get input features for prediction
-    input_features = data  # Adjust this based on your model's input features
+    #input_features = data  # Adjust this based on your model's input features
 
     # Make predictions using the model
-    predictions = model.predict(input_features)
+    predictions = model.predict(data)
 
     # Display the predictions
     st.write('Predictions:')
