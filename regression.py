@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
-from io import BytesIO
+#from io import BytesIO
 #import requests
 
 # Set title of the app
