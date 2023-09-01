@@ -14,7 +14,7 @@ uploaded_file = st.file_uploader('Upload an CSV file', type=['csv'])
 #print(type(content))
 #buffer = BytesIO(content)
 # Load the trained model
-model = joblib.load("https://github.com/Ye-Min-Ag/SimboloProjectCheck/blob/main/trained_model.pkl") 
+model = joblib.load("trained_model.pkl") 
 
 # Display the prediction form if a file is uploaded
 if uploaded_file is not None:
