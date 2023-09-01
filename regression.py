@@ -33,5 +33,5 @@ if uploaded_file is not None:
     # Display the predictions
     st.write('Predictions:')
     st.write(predictions)
-    st.write('True values:)
+    st.write('True values:')
     st.write(file_Y)
