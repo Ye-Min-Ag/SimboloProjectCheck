@@ -8,8 +8,8 @@ st.title('ML Prediction App')
 uploaded_file = st.file_uploader('Upload an CSV file', type=['csv'])
 response = requests.get("https://github.com/Ye-Min-Ag/SimboloProjectCheck/raw/main/trained_model.pkl")
 model_content = response.content
-model_buffer = BytesIO(model_content)
-model = pickle.loads(model_buffer)
+# Load the trained model using pickle
+model = pickle.loads(model_content)
 if uploaded_file is not None:
     # Read the uploaded .xlsx file
     data = pd.read_csv(uploaded_file)
