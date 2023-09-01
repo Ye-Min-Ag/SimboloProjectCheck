@@ -43,6 +43,8 @@ def main():
     if uploaded_file is not None:
         feature = feature_extraction(uploaded_file)
         Predicted_values = predict_value(feature)
+    st.write('Predictions:')
+    st.write(Predicted_values)
 
 # Display the prediction form if a file is uploaded
 def feature_extraction(file):
@@ -52,7 +54,7 @@ def feature_extraction(file):
     file_Y = data.iloc[:, -1].values
     return file_X
 
-    # Display the predictions and true values
-st.write('Predictions:')
-st.write(Predicted_values)
+if __name__=='__main__':
+    main()
+
 
