@@ -3,8 +3,8 @@ import pandas as pd
 import joblib
 
 pkl_url = "https://github.com/Ye-Min-Ag/SimboloProjectCheck/blob/main/trained_model.pkl"
-response = request.get(pkl_url)
-content= respons.content
+response = requests.get(pkl_url)
+content = response.content
 # Set title of the app
 st.title('ML Prediction App')
 
