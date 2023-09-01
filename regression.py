@@ -1,15 +1,15 @@
 import streamlit as st
 import pandas as pd
-import joblib
-from io import BytesIO
+#import joblib
+#from io import BytesIO
 import requests
+import pickle
 
 st.title('ML Prediction App')
 uploaded_file = st.file_uploader('Upload an CSV file', type=['csv'])
 response = requests.get("https://github.com/Ye-Min-Ag/SimboloProjectCheck/blob/main/trained_model.pkl")
 content = response.content
-buffer = BytesIO(content)
-model = joblib.load(buffer) 
+model = pickle.load(open(content,'rb')) 
 if uploaded_file is not None:
     # Read the uploaded .xlsx file
     data = pd.read_csv(uploaded_file)
