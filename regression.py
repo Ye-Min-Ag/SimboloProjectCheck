@@ -24,42 +24,6 @@ if uploaded_file is not None:
     st.write(file_Y)
 
     
-'''
-import streamlit as st
-import pandas as pd
-import pickle
-model = pickle.load(open('trained_model.pkl','rb'))
-# Set title of the app
-st.set_page_config(
-    page_title="Prediction App",
-    page_icon="🤖",
-    layout="centered",
-    initial_sidebar_state="expanded",
-)
 
-def predict_value(f):
-    input = f
-    prediction = model.predict(input)
-    return prediction
-
-def main():
-    # Upload a .csv file
-    uploaded_file = st.file_uploader('Upload a CSV file', type=['csv'])
-    if uploaded_file is not None:
-        feature = feature_extraction(uploaded_file)
-        Predicted_values = predict_value(feature)
-    st.write('Predictions:')
-    st.write(Predicted_values)
-
-# Display the prediction form if a file is uploaded
-def feature_extraction(file):
-    # Read the uploaded .csv file
-    data = pd.read_csv(file)
-    file_X = data.iloc[:, 0:-1].values
-    file_Y = data.iloc[:, -1].values
-    return file_X
-
-if __name__=='__main__':
-    main()'''
 
 
