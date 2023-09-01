@@ -12,7 +12,7 @@ pkl_url = "https://github.com/Ye-Min-Ag/SimboloProjectCheck/blob/main/trained_mo
 response = requests.get(pkl_url)
 content = response.content
 # Load the trained model
-model = joblib.load(BytesIO(content))  # Replace with the actual file name
+model = joblib.load(BytesIO(content)) 
 
 # Display the prediction form if a file is uploaded
 if uploaded_file is not None:
