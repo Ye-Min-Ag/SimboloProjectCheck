@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import pickle
-from io import BytesIO
 import requests
 
 st.title('ML Prediction App')
