@@ -1,4 +1,4 @@
-'''import streamlit as st
+import streamlit as st
 import pandas as pd
 import pickle
 from io import BytesIO
@@ -6,7 +6,7 @@ import requests
 
 st.title('ML Prediction App')
 uploaded_file = st.file_uploader('Upload an CSV file', type=['csv'])
-response = requests.get("https://github.com/Ye-Min-Ag/SimboloProjectCheck/blob/main/trained_model.pkl")
+response = requests.get("https://github.com/Ye-Min-Ag/SimboloProjectCheck/raw/main/trained_model.pkl")
 model_content = response.content
 model = pickle.loads(model_content)
 if uploaded_file is not None:
@@ -19,7 +19,9 @@ if uploaded_file is not None:
     st.write('Predictions:')
     st.write(predictions)
     st.write('True values:')
-    st.write(file_Y)'''
+    st.write(file_Y)
+    
+'''
 import streamlit as st
 import pandas as pd
 import pickle
@@ -55,6 +57,6 @@ def feature_extraction(file):
     return file_X
 
 if __name__=='__main__':
-    main()
+    main()'''
 
 
