@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
-from io import BytesIO
+from joblib import BytesIO
 import requests
 
 # Set title of the app
@@ -9,8 +9,7 @@ st.title('ML Prediction App')
 
 # Upload a .xlsx file
 uploaded_file = st.file_uploader('Upload an CSV file', type=['csv'])
-pkl_url = "https://github.com/Ye-Min-Ag/SimboloProjectCheck/blob/main/trained_model.pkl"
-response = requests.get(pkl_url)
+response = requests.get("https://github.com/Ye-Min-Ag/SimboloProjectCheck/blob/main/trained_model.pkl")
 content = response.content
 # Load the trained model
 model = joblib.load(BytesIO(content)) 
