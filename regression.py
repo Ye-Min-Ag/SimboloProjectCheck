@@ -22,7 +22,7 @@ if uploaded_file is not None:
     st.write(file_Y)'''
 import streamlit as st
 import pandas as pd
-import pickle
+from pickle import loads
 from io import BytesIO
 import requests
 
