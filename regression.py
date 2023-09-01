@@ -4,17 +4,16 @@ import joblib
 from io import BytesIO
 import requests
 
-# Set title of the app
-st.title('ML Prediction App')
-
-# Upload a .xlsx file
-uploaded_file = st.file_uploader('Upload an CSV file', type=['csv'])
 response = requests.get("https://github.com/Ye-Min-Ag/SimboloProjectCheck/blob/main/trained_model.pkl")
 content = response.content
 #print(type(content))
 buffer = BytesIO(content)
 # Load the trained model
 model = joblib.load(buffer) 
+# Set title of the app
+
+st.title('ML Prediction App')
+uploaded_file = st.file_uploader('Upload an CSV file', type=['csv'])
 
 # Display the prediction form if a file is uploaded
 if uploaded_file is not None:
