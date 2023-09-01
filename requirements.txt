@@ -5,3 +5,4 @@ loads
 requests
 io
 BytesIO
+scikit-learn
