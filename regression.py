@@ -18,7 +18,8 @@ model = joblib.load(BytesIO(content))  # Replace with the actual file name
 if uploaded_file is not None:
     # Read the uploaded .xlsx file
     data = pd.read_csv(uploaded_file)
-
+    file_X = data.iloc[:,0:-1].values
+    file_Y = data.iloc[:,-1].values
     # Display the uploaded data
     #st.write('Uploaded Data:')
     #st.write(data)
@@ -27,8 +28,10 @@ if uploaded_file is not None:
     #input_features = data  # Adjust this based on your model's input features
 
     # Make predictions using the model
-    predictions = model.predict(data)
+    predictions = model.predict(file_X)
 
     # Display the predictions
     st.write('Predictions:')
     st.write(predictions)
+    st.write('True values:)
+    st.write(file_Y)
