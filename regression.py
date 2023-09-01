@@ -1,17 +1,17 @@
 import streamlit as st
 import pandas as pd
-from pickle import loads
+import pickle
 from io import BytesIO
 import requests
 
 st.title('ML Prediction App')
-uploaded_file = st.file_uploader('Upload an CSV file', type=['csv'])
-response = requests.get("https://github.com/Ye-Min-Ag/SimboloProjectCheck/blob/250cc43e1d622a363316b30d48e8347e553b730b/trained_model.pkl")
+uploaded_file = st.file_uploader('Upload a CSV file', type=['csv'])
+response = requests.get("https://github.com/Ye-Min-Ag/SimboloProjectCheck/raw/250cc43e1d622a363316b30d48e8347e553b730b/trained_model.pkl")
 model_content = response.content
 # Load the trained model using pickle
 model = pickle.loads(model_content)
 if uploaded_file is not None:
-    # Read the uploaded .xlsx file
+    # Read the uploaded .csv file
     data = pd.read_csv(uploaded_file)
     file_X = data.iloc[:,0:-1].values
     file_Y = data.iloc[:,-1].values
@@ -21,6 +21,7 @@ if uploaded_file is not None:
     st.write(predictions)
     st.write('True values:')
     st.write(file_Y)
+
     
 '''
 import streamlit as st
