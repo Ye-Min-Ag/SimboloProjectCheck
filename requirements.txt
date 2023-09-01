@@ -3,4 +3,5 @@ pandas
 io
 BytesIO
 pickle
+loads
 requests
