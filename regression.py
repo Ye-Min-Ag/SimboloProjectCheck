@@ -6,7 +6,7 @@ import requests
 
 st.title('ML Prediction App')
 uploaded_file = st.file_uploader('Upload an CSV file', type=['csv'])
-response = requests.get("https://github.com/Ye-Min-Ag/SimboloProjectCheck/raw/main/trained_model.pkl")
+response = requests.get("https://github.com/Ye-Min-Ag/SimboloProjectCheck/blob/250cc43e1d622a363316b30d48e8347e553b730b/trained_model.pkl")
 model_content = response.content
 # Load the trained model using pickle
 model = pickle.loads(model_content)
