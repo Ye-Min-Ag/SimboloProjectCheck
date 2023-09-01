@@ -11,6 +11,7 @@ st.title('ML Prediction App')
 uploaded_file = st.file_uploader('Upload an CSV file', type=['csv'])
 response = requests.get("https://github.com/Ye-Min-Ag/SimboloProjectCheck/blob/main/trained_model.pkl")
 content = response.content
+print(type(content))
 buffer = BytesIO(content)
 # Load the trained model
 model = joblib.load(buffer) 
