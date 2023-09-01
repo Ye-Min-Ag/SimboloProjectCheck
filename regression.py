@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import joblib
 
+pkl_url = "https://github.com/Ye-Min-Ag/SimboloProjectCheck/blob/main/trained_model.pkl"
+response = request.get(pkl_url)
+content= respons.content
 # Set title of the app
 st.title('ML Prediction App')
 
@@ -9,7 +12,7 @@ st.title('ML Prediction App')
 uploaded_file = st.file_uploader('Upload an CSV file', type=['csv'])
 
 # Load the trained model
-model = joblib.load('trained_model.pkl')  # Replace with the actual file name
+model = joblib.load(BytesIO(content))  # Replace with the actual file name
 
 # Display the prediction form if a file is uploaded
 if uploaded_file is not None:
