@@ -31,10 +31,10 @@ st.title('ML Prediction App')
 
 # Upload a .csv file
 uploaded_file = st.file_uploader('Upload a CSV file', type=['csv'])
-#response = requests.get("https://github.com/Ye-Min-Ag/SimboloProjectCheck/blob/main/trained_model.pkl")
-#model_content = response.content
+response = requests.get("https://github.com/Ye-Min-Ag/SimboloProjectCheck/blob/main/trained_model.pkl")
+model_content = response.content
 # Load the trained model using pickle
-model = pickle.load(open('trained_model.pkl','rb'))
+model = pickle.loads(model_content)
 
 # Display the prediction form if a file is uploaded
 if uploaded_file is not None:
