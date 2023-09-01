@@ -9,7 +9,7 @@ uploaded_file = st.file_uploader('Upload an CSV file', type=['csv'])
 response = requests.get("https://github.com/Ye-Min-Ag/SimboloProjectCheck/raw/main/trained_model.pkl")
 model_content = response.content
 model_buffer = BytesIO(model_content)
-model = joblib.load(model_buffer)
+model = pickle.load(model_buffer)
 if uploaded_file is not None:
     # Read the uploaded .xlsx file
     data = pd.read_csv(uploaded_file)
