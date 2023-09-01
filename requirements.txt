@@ -1,8 +1,5 @@
 streamlit
 pandas
-pickle
 loads
 requests
-io
-BytesIO
 scikit-learn
